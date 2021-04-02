@@ -1,4 +1,4 @@
-.bookCard{
+.adminManageBooks{
     border: 5px solid gray;
     border-radius: 20px;
     width: 400px;
@@ -7,13 +7,15 @@
     text-align: center;
     justify-content: center;
 
-    background-color: antiquewhite;
+    background-color: cyan;
     padding: 10px;
 }
-.bookCard img{
+
+.adminManageBooks img{
     width: 350px;
     height: 350px;
 }
-.bookCard button{
+.adminManageBooks button{
     margin-left: 120px;
+    background-color: darkgoldenrod;
 }

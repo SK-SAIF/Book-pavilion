@@ -17,9 +17,8 @@ const Home = () => {
     console.log(allBooks);
     return (
         <div>
-            <h1>This is Home</h1>
            {
-               allBooks.map(item=><BookCard eachBook={item}></BookCard>)
+               allBooks.map(item=><BookCard key={item._id} eachBook={item}></BookCard>)
            }
         </div>
     );
