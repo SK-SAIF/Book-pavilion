@@ -6,7 +6,7 @@ const Home = () => {
     const [allBooks, setAllBooks]=useContext(BookContext);
    
     useEffect(()=>{
-        fetch('http://localhost:5000/getAllBooks')
+        fetch('https://polar-lowlands-56058.herokuapp.com/getAllBooks')
         .then(res=>res.json())
         .then(data=>{
             //const newData={...allBooks,data};

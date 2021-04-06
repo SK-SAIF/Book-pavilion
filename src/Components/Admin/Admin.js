@@ -53,7 +53,7 @@ const Admin = () => {
     const onSubmit = (event) => {
         //console.log("Total information for books",bookInfo);
 
-        fetch('http://localhost:5000/addBook', {
+        fetch('https://polar-lowlands-56058.herokuapp.com/addBook', {
             method: "POST",
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(bookInfo)

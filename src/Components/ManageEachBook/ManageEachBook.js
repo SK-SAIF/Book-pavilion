@@ -5,7 +5,7 @@ const ManageEachBook = (props) => {
     //console.log(singleBook);
     const handleBookDelete=(id)=>{
         console.log(id);
-        fetch(`http://localhost:5000/DeleteOne/${id}`,{
+        fetch(`https://polar-lowlands-56058.herokuapp.com/DeleteOne/${id}`,{
             method:'DELETE'
         })
         .then(res=>res.json)

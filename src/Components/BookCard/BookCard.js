@@ -11,7 +11,7 @@ const BookCard = (props) => {
         const orderInfo={userName:user.displayName,userMail:user.email,id,bookName,bookPrice,time:new Date()};
         console.log(orderInfo);
 
-        fetch('http://localhost:5000/placeOrder',{
+        fetch('https://polar-lowlands-56058.herokuapp.com/placeOrder',{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify(orderInfo)
