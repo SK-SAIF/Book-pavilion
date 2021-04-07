@@ -6,7 +6,7 @@ import {
   Link
 } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Nav, Navbar } from 'react-bootstrap';
+import { Nav, Navbar, Spinner } from 'react-bootstrap';
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
 import Features from "./Components/Features/Features";
@@ -15,10 +15,7 @@ import NotFound from "./Components/NotFound/NotFound";
 import Deals from "./Components/Deals/Deals";
 import Orders from "./Components/Orders/Orders";
 import ManageBooks from "./Components/ManageBooks/ManageBooks";
-import AddBooks from "./Components/AddBooks/AddBooks";
 import PrivateRoute from "./Components/PrivateRoute/PrivateRoute";
-
-
 export const UserContext = createContext();
 export const BookContext = createContext();
 
@@ -47,7 +44,6 @@ function App() {
                   <Nav.Link><Link to="/Deals">Deals</Link></Nav.Link>
                   <Nav.Link><Link to="/Admin">Admin</Link></Nav.Link>
                   <Nav.Link><Link to="/Login">Login</Link></Nav.Link>
-
                 </Nav>
               </Navbar.Collapse>
             </Navbar>
@@ -89,8 +85,6 @@ function App() {
         </BookContext.Provider>
 
       </UserContext.Provider>
-
-
     </div>
   );
 }

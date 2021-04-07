@@ -3,14 +3,10 @@ import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link, Route, Router, Switch } from 'react-router-dom';
 import { BookContext } from '../../App';
-import ManageBooks from '../ManageBooks/ManageBooks';
 import './Admin.css';
-
 
 const Admin = () => {
     const [allBooks, setAllBooks] = useContext(BookContext);
-
-    //local state
     const [bookInfo, setBookInfo] = useState({
         name: '',
         price: '',
@@ -20,13 +16,11 @@ const Admin = () => {
         const newBookName = { ...bookInfo };
         newBookName.name = event.target.value;
         setBookInfo(newBookName);
-        //console.log(newBookName);
     }
     const handleBookPrice = event => {
         const newBookPrice = { ...bookInfo };
         newBookPrice.price = event.target.value;
         setBookInfo(newBookPrice);
-        //console.log(newBookPrice);
     }
     const handleBookImage = event => {
         const imageData = new FormData();
@@ -35,20 +29,15 @@ const Admin = () => {
 
         axios.post('https://api.imgbb.com/1/upload', imageData)
             .then(function (response) {
-                //console.log(response.data.data.display_url);
                 const newBookImage = { ...bookInfo };
                 newBookImage.imageURl = response.data.data.display_url;
                 setBookInfo(newBookImage);
-                // console.log(newBookImage);
             })
             .catch(function (error) {
                 console.log(error);
             });
 
     }
-
-
-
     const { register, handleSubmit, errors } = useForm();
     const onSubmit = (event) => {
         //console.log("Total information for books",bookInfo);
@@ -73,11 +62,9 @@ const Admin = () => {
                 <Link to="/AddBooks">Add Books</Link>
                 <a href="#edit">Edit Books</a>
             </div>
-
             <div className="content">
-                
                 <form onSubmit={handleSubmit(onSubmit)}>
-                    <h3>Add Books here!</h3>    
+                    <h3>Add Books here!</h3>
                     <label>Book Name</label>
                     <input name="bookName" type="text" id="bookName" onBlur={handleBookName} />
                     <label>Book Price</label>
@@ -87,7 +74,7 @@ const Admin = () => {
                     <input type="submit" />
                 </form>
             </div>
-           
+
         </div>
     );
 };
